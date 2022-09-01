@@ -1,5 +1,6 @@
 package com.gogetters.service;
 
+import com.gogetters.database.Database;
 import com.gogetters.entity.School;
 
 import java.util.List;
@@ -7,7 +8,12 @@ import java.util.List;
 public class SchoolServiceImpl implements CRUDService<School>{
     @Override
     public School findById(int id) {
-        return null;
+        return Database.schoolList.stream()
+                .filter(school -> school.id==id)
+                .findFirst().orElseThrow();
+
+
+
     }
 
     @Override
