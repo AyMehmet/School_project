@@ -12,6 +12,8 @@ import java.util.Scanner;
 
 public class SchoolMainRunner {
 
+    public  static ParentServiceImpl parentService;
+
 //    public static CRUDService<School> schoolService;
 //    public static CRUDService<Course> courseService;
 //    public static CRUDService<Parent> parentService;
@@ -25,6 +27,10 @@ public class SchoolMainRunner {
 //    }
 
     public static void main(String[] args) {
+
+
+
+
 
 
     }
