@@ -1,5 +1,6 @@
 package com.gogetters;
 
+import com.gogetters.database.Database;
 import com.gogetters.entity.Course;
 import com.gogetters.entity.Parent;
 import com.gogetters.entity.School;
@@ -25,7 +26,6 @@ public class SchoolMainRunner {
 //    }
 
     public static void main(String[] args) {
-
 
     }
 
