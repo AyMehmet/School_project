@@ -36,5 +36,15 @@ public class StudentService implements CRUDService<Student> {
     @Override
     public void deleteById(Long id) {
 
+        studentList.removeIf(student -> student.getId() == id);
+
+     /*   Student studentToRemove = studentList.stream()
+                .filter(student -> student.getId() == id)
+                .findFirst().orElseThrow(() -> new RuntimeException("no such a student"));
+
+        studentList.remove(studentToRemove);
+
+
+      */
     }
 }

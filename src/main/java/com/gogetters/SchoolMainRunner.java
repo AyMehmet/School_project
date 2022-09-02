@@ -34,5 +34,12 @@ public class SchoolMainRunner {
             System.out.println(student);
         }
 
+        studentService.deleteById(1L);
+
+        for (Student student : studentService.findAll()) {
+            System.out.println(student);
+        }
+
+
     }
 }
