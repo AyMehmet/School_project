@@ -1,8 +1,6 @@
 package com.gogetters.service;
 import com.gogetters.entity.Course;
-
 import java.util.List;
-
 import static com.gogetters.database.Database.courseList;
 
 public class CourseServiceImp implements CRUDService{
