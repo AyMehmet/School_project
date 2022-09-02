@@ -3,10 +3,10 @@ import com.gogetters.entity.Course;
 import java.util.List;
 import static com.gogetters.database.Database.courseList;
 
-public class CourseServiceImp implements CRUDService{
+public class CourseServiceImp implements CRUDService<Course>{
 
     @Override
-    public Object findById(int id) {
+    public Course findById(int id) {
         return courseList.stream()
                 .filter(course -> course.id == id)
                 .findFirst().get();
@@ -17,17 +17,16 @@ public class CourseServiceImp implements CRUDService{
         return courseList;
     }
 
-
     public void save(Course o) {
-            courseList.add((Course)o);
+            courseList.add(o);
     }
 
     public void update(Course object) {
             for (Course course : courseList) {
-                if (course.getId() == ((Course)(object)).getId()) {
-                    course.setCourseDay(((Course)(object)).getCourseDay());
-                    course.setName(((Course)(object)).getName());
-                    course.setMinScore(((Course)(object)).getMinScore());
+                if (course.getId() == (object).getId()) {
+                    course.setCourseDay(object.getCourseDay());
+                    course.setName(object.getName());
+                    course.setMinScore(object.getMinScore());
                 }
             }
     }//end of module
