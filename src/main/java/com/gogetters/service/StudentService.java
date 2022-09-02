@@ -1,6 +1,5 @@
 package com.gogetters.service;
 
-import com.gogetters.database.Database;
 import com.gogetters.entity.Student;
 
 import java.util.List;
