@@ -4,6 +4,7 @@ import com.gogetters.database.Database;
 import com.gogetters.entity.School;
 import java.util.Scanner;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SchoolServiceImpl implements CRUDService<School>{
 
@@ -22,24 +23,26 @@ public class SchoolServiceImpl implements CRUDService<School>{
 
     @Override
     public void save(School school) {
-
         Database.schoolList.add(school);
-
     }
 
 
     @Override
     public void update(School school) {
-        School sc =Database.schoolList
-                .stream()
-                .filter(p->p.equals(school))
-                .findFirst().orElseThrow();
-        System.out.println("Please enter the new name of the school");
-        Scanner input = new Scanner(System.in);
-        String s = input.next();
+        Database.schoolList.stream()
+                .filter(school1 -> school1.getId()== school.id)
+                .map(school1 -> new School())
+                .collect(Collectors.toList());
 
-        sc.setName(s);
-        System.out.println("successful, school's name is updated");
+//        System.out.println("Please enter the school id that you want to update");
+//        Scanner input = new Scanner(System.in);
+//        int s = input.nextInt();
+//        School sc =Database.schoolList
+//                .stream()
+//                .filter(p->p.id ==s )
+//                .findFirst().orElseThrow();
+//        sc= school;
+
 
     }
 
@@ -52,10 +55,8 @@ public class SchoolServiceImpl implements CRUDService<School>{
                 .filter(p->p.getId()==id)
                 .findFirst().orElseThrow();
         Database.schoolList.remove(sc);
-
-
-
-
-
     }
+
+
+
 }
