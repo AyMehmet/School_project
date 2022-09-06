@@ -31,6 +31,19 @@ public class StudentService implements CRUDService<Student> {
     @Override
     public void update(Student student) {
 
+        studentList.stream()
+                .filter(student1 -> student1.getId() == student.getId())
+                .map(student1 -> {
+
+                    student1.setStudentNumber(student.getStudentNumber());
+                    student1.setFirstName(student.getFirstName());
+                    student1.setLastName(student.getLastName());
+                    student1.setParent(student.getParent());
+                    student1.setCourses(student.getCourses());
+                    return student1;
+
+                }).findFirst().orElseThrow();
+
     }
 
     @Override
