@@ -1,5 +1,6 @@
 package com.gogetters;
 
+import com.gogetters.database.Database;
 import com.gogetters.entity.Course;
 import com.gogetters.entity.Parent;
 import com.gogetters.entity.School;
@@ -7,6 +8,7 @@ import com.gogetters.entity.Student;
 import com.gogetters.service.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,9 +28,9 @@ public class SchoolMainRunner {
 
     public static void main(String[] args) {
 
-      //  System.out.println(studentService.findById(1));
-
-    //    System.out.println(studentService.findAll());
+//        System.out.println(studentService.findById(1));
+//
+//        System.out.println(studentService.findAll());
 
         for (Student student : studentService.findAll()) {
             System.out.println(student);
@@ -40,6 +42,15 @@ public class SchoolMainRunner {
             System.out.println(student);
         }
 
+        List<Course> list = Arrays.asList(Database.courseList.get(0));
+
+        Student updatedStudent = new Student(2, 11L, "kyoung", "kim", new Parent("nurbanu", "terzioglu"),list);
+
+        studentService.update(updatedStudent);
+
+        for (Student student : studentService.findAll()) {
+            System.out.println(student);
+        }
 
     }
 }
