@@ -1,6 +1,5 @@
 package com.gogetters;
 
-import com.gogetters.database.Database;
 import com.gogetters.entity.Course;
 import com.gogetters.entity.Parent;
 import com.gogetters.entity.School;
@@ -41,6 +40,7 @@ public class SchoolMainRunner {
         for (Student student : studentService.findAll()) {
             System.out.println(student);
         }
+    }
 
         List<Course> list = Arrays.asList(Database.courseList.get(0));
 

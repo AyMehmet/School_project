@@ -18,7 +18,6 @@ public class Student  extends BaseEntity{
     private Parent parent;
     private List<Course> courses;
 
-
     public Student(int id, Long studentNumber, String firstName, String lastName, Parent parent, List<Course> courses) {
         super(id);
         this.studentNumber = studentNumber;
