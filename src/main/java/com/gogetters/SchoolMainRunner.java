@@ -52,5 +52,6 @@ public class SchoolMainRunner {
             System.out.println(student);
         }
 
+
     }
 }
