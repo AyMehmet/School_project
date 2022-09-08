@@ -2,11 +2,11 @@ package com.gogetters.service;
 
 import com.gogetters.database.Database;
 import com.gogetters.entity.School;
-import java.util.Scanner;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SchoolServiceImpl implements CRUDService<School>{
+public class SchoolService implements CRUDService<School>{
 
     @Override
     public School findById(int id) {

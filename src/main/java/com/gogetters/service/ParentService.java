@@ -5,9 +5,8 @@ import com.gogetters.entity.Parent;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
-public class ParentServiceImpl implements CRUDService<Parent> {
+public class ParentService implements CRUDService<Parent> {
     @Override
     public Parent findById(int id) {
         return Database.parentList.stream()

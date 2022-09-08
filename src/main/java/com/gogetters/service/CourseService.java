@@ -3,13 +3,13 @@ import com.gogetters.entity.Course;
 import java.util.List;
 import static com.gogetters.database.Database.courseList;
 
-public class CourseServiceImp implements CRUDService<Course>{
+public class CourseService implements CRUDService<Course>{
 
     @Override
     public Course findById(int id) {
         return  courseList.stream()
                 .filter(course -> course.id == id)
-                .findFirst().get();
+                .findFirst().orElseThrow();
 
     }
 

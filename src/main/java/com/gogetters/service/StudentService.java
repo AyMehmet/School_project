@@ -3,6 +3,7 @@ package com.gogetters.service;
 import com.gogetters.entity.Student;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.gogetters.database.Database.studentList;
 
@@ -10,7 +11,6 @@ public class StudentService implements CRUDService<Student> {
 
     @Override
     public Student findById(int id) {
-
         return studentList
                 .stream()
                 .filter(student -> student.getId() == id)
