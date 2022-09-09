@@ -2,17 +2,16 @@ package com.gogetters.service;
 
 import com.gogetters.database.Database;
 import com.gogetters.entity.School;
-import java.util.Scanner;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class SchoolServiceImpl implements CRUDService<School>{
 
     @Override
     public School findById(int id) {
         return Database.schoolList.stream()
-                .filter(school -> school.id==id)
-                .findFirst().orElseThrow();
+                .filter(school -> school.getId()==id)
+                .findFirst().orElseThrow(() -> new RuntimeException("No such school was found"));
 
     }
 
