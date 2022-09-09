@@ -30,18 +30,14 @@ public class SchoolServiceImpl implements CRUDService<School>{
     @Override
     public void update(School school) {
         Database.schoolList.stream()
-                .filter(school1 -> school1.getId()== school.id)
-                .map(school1 -> new School())
-                .collect(Collectors.toList());
+                .filter(school1 -> school1.getId()== school.getId())
+                .map(school1 -> {
+                    school1.setName(school.getName());
+                    school1.setStudents(school.getStudents());
+                    school1.setCourses(school.getCourses());
+                    return school1;
 
-//        System.out.println("Please enter the school id that you want to update");
-//        Scanner input = new Scanner(System.in);
-//        int s = input.nextInt();
-//        School sc =Database.schoolList
-//                .stream()
-//                .filter(p->p.id ==s )
-//                .findFirst().orElseThrow();
-//        sc= school;
+                }).findFirst().orElseThrow();
 
 
     }
