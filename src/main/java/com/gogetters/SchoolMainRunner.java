@@ -28,13 +28,7 @@ public class SchoolMainRunner {
 
 //********************************* Course Service ********************//
 
-//     try {
-//         Course course=courseService.findById(1);
-//         System.out.println(course);
-//     }
-//     catch (Exception e){
-//         System.out.println("No Such Course");
-//     }
+
 
 //     System.out.println(courseService.findById(7));
 //
