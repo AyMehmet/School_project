@@ -45,4 +45,11 @@ public class Database {
 //    ));
 
 
+//    public static List<School> schoolList3 = new ArrayList<>(List.of(
+//            new School(1,"ABC_School", studentList,courseList),
+//            new School(2,"Java_School", studentList,courseList)
+//    ));
+
+
+
 }
