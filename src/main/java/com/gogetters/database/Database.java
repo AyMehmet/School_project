@@ -50,6 +50,10 @@ public class Database {
 //            new School(2,"Java_School", studentList,courseList)
 //    ));
 
+//    public static List<School> schoolList4 = new ArrayList<>(List.of(
+//            new School(1,"ABC_School", studentList,courseList),
+//            new School(2,"Java_School", studentList,courseList)
+//    ));
 
 
 }
